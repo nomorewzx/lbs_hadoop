@@ -5,7 +5,7 @@ import resultToMySQL
 __author__ = 'WangZhenXuan'
 
 if __name__ == '__main__':
-	f = open('scores.txt','a')
+	f = open('./scores.txt','a')
 	try:
 		conn = MySQLdb.connect(host = 'localhost', user = 'root', passwd ='123', db = 'view', charset='utf8')
 		cur = conn.cursor()
@@ -21,8 +21,8 @@ if __name__ == '__main__':
 		f.write('\n')
 	f.close()
 	# delete quotes, brackets and commas
-	f = open('scores.txt','r')
-	files = open('scores','a')
+	f = open('./scores.txt','r')
+	files = open('./scores','a')
 	reObj = re.compile(r'\'|u|\(|\)|\s')
 	scoresFile = f.readlines()
 	for line in scoresFile:

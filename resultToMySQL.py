@@ -3,7 +3,7 @@ import MySQLdb
 import re
 import os
 def run():
-	os.system('/home/administrator/Mahout.sh')
+	os.system('./Mahout.sh')
 	f = open('result','r')
 	try:
 		conn = MySQLdb.connect(host = 'localhost', user = 'root', passwd='123',db='view',charset='utf8')
@@ -45,11 +45,12 @@ def run():
 			print"insert error %d:%s" % (e.args[0],e.args[1])
 	cur.close()
 	conn.close()
-	os.system('rm ~/result')
-	os.system('rm ~/insert_recommendation')
-	os.system('rm ~/scores')
-	os.system('rm ~/scores.txt')
-__author__= 'nomore'
+	os.system('rm ./result')
+	os.system('rm ./insert_recommendation')
+	os.system('rm ./scores')
+	os.system('rm ./scores.txt')
+	print "...complete....."
+
 if __name__ == '__main__':
 	run()
 
